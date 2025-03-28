@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:wght@300;400;500;600;700&display=swap");
+body,
+button {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Các kiểu khác của bạn ở đây */
+:root {
+  --offcanvas-width: 270px;
+  --topNavbarHeight: 56px;
+}
+.sidebar-nav {
+  width: var(--offcanvas-width);
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+  transition: all ease 0.25s;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+
+.offcanvas-backdrop::before {
+  display: none;
+}
+
+div#offcanvasScrolling {
+  width: 270px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 56px;
+  left: 0;
+}
+
+/* Box QR */
+.box-qr {
+  margin: 40px auto;
+  width: 360px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%);
+  border-radius: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.box-qr > .generate-qr {
+  width: 328px;
+  height: 320px;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  margin-bottom: 32px;
+  position: relative;
+  right: 4px;
+}
+.btn-qr {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* Đăng nhập đăng xuất */
+#navbarSupportedContent {
+  position: relative;
+  left: 82%;
+  top: 6px;
+}
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+  .sidebar-nav {
+    transform: none;
+    visibility: visible !important;
+    top: var(--topNavbarHeight);
+    height: calc(100% - var(--topNavbarHeight));
+  }
+}
+/* Ghi dè DataTable */
+
+div.dt-container .dt-paging .dt-paging-button {
+  padding: 1px;
+}
+.is-invalid {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+#myToast_DoiTra {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  animation: fadeIn 0.5s;
+}
